@@ -25,13 +25,14 @@
     overflow-x: hidden;
 }
 
+/* Position: changed to relative (on github) */
 body{
     position: relative;
     background-color: black;
 }
-/* below changes made to hide overflow in mobile device */
+/* below changes made to hide overflow in mobile device (on github)*/
 html,body{
-    overflow-x: hidden;
+    overflow-x: hidden!important;
 }
 
 /* NAVBAR */
