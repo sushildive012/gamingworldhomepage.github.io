@@ -27,6 +27,9 @@
 
 body{
     background-color: black;
+}
+/* below changes made to hide overflow in mobile device */
+html,body{
     overflow-x: hidden;
 }
 
