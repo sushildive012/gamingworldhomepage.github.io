@@ -1062,6 +1062,7 @@ footer p{
     .inheading{
         display: flex;
         align-items: center;
+        font-size: 2.8rem;
     
     }
     #games:hover .heading{
@@ -1140,6 +1141,7 @@ footer p{
     .alt-inheading{
         display: flex;
         align-items: center;
+        font-size: 2.8rem;
     }
     #popular:hover .alt-heading{
         font-size: 2.8rem;/*c*/
