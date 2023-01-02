@@ -26,6 +26,7 @@
 }
 
 body{
+    position: relative;
     background-color: black;
 }
 /* below changes made to hide overflow in mobile device */
