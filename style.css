@@ -1,0 +1,1438 @@
+/* Reset html */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /* box-sizing: border-box; */
+    
+    /* font-family: 'Anton', sans-serif; */
+    /* font-family: 'Caveat', cursive; */
+    /* font-family: 'Fira Sans', sans-serif; */
+    /* font-family: 'Nerko One', cursive; */
+    /* font-family: 'Pacifico', cursive; */
+    /* font-family: 'Patrick Hand', cursive; */
+
+    /* font-family: 'Rubik 80s Fade', cursive; */
+    /* font-family: 'Russo One', sans-serif; */
+    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Ubuntu', sans-serif; */
+}
+
+/* For rem */
+:root{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: black;
+}
+
+/* NAVBAR */
+
+.navbar{
+    /* border: 2px solid yellow; */
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2;
+    
+}
+.search-bar{
+    position: relative;
+    width: 18%;
+    height: 3.5rem;
+}
+.search-bar input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding-left: 1rem;
+    margin: auto 1rem;
+    border-radius: 3.25rem;
+    cursor: pointer;
+}
+.search-bar input:hover{
+    color: black;
+    background-color: rgb(229, 229, 229);
+}
+.navlinks{
+    width: 40%;  
+}
+.navlinks ul{
+    /* border: 1px solid pink; */
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.navlinks li{
+    position: relative;
+    height: 100%;
+    width: 16%;
+    /* background-color: red; */
+    list-style: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    border: 1px solid white;
+    border-radius: 2rem;
+}
+.navlinks li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.navlinks li::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    opacity: 1;
+    /* background-color: red; */
+    z-index: -1;
+    border-radius: 2rem;
+    
+    transition: 0.3s ease-out;
+}
+.navlinks li:hover::before{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+.navlinks li:hover a{
+    color: rgb(255, 0, 0);
+}
+
+
+.navlinks li a{
+    text-decoration: none;
+    color: rgb(153, 255, 0);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.menu-btn{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    filter: invert(100%);
+    cursor: pointer;
+    /* z-index: 1; */
+    display: none;  /*to hide ffrom bigger screen */
+}
+
+
+#home-section{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    /* border-bottom: 1px solid white; */
+    /* background-color: aqua; */
+}
+#home-section::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('/img/CallOFDuty-dar.jpg') top center/cover;
+    animation: bgchange 8s 5s infinite ease-in-out;
+    opacity: 0.4;
+    z-index: -1;   /*THIS COULD BE PROPLEM*/
+}
+
+@keyframes bgchange{
+    0%
+    {
+        background: url('/img/CallOFDuty-dar.jpg') top center/cover;
+    }
+    33%
+    {
+        background: url('/img/homebg2.jpg') center center/cover;
+    }
+    66%
+    {
+        background: url('/img/homebggreen.jpg') center center/cover;
+    }
+    100%
+    {
+        background: url('/img/CallOFDuty-dar.jpg') top center/cover;
+    }
+}
+
+.content{
+    /* border: 2px solid red; */
+    height: 50%;
+    width: 100%;
+    color: white;
+    font-size: 3rem;  /*try to use vmin*/
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+}
+
+.content h1{
+    color: rgb(205, 205, 205);
+    /* font-family: 'Russo One', sans-serif; */
+    font-family: 'Rubik 80s Fade';
+    transform: translateX(-15ch);
+    animation: welcome 0.8s 0.2s ease-in-out forwards;
+}
+
+@keyframes welcome{
+    from{
+        transform: translateX(-15ch);
+    }
+    to{
+        transform: translateX(0ch);
+    }
+}
+.content h2{
+    color: rgb(153, 255, 0);
+    font-family: 'Orbitron', sans-serif;
+    /* text-shadow: 3px 3px 5px rgb(121, 142, 0); */
+    animation: gaming 1s 1.2s ease-in-out alternate;
+}
+
+@keyframes gaming{
+    0%
+    {
+        text-shadow: none;
+    }
+    50%{
+        color: rgb(255, 255, 255);
+        text-shadow: 0px 8px 20px rgb(255, 0, 0);
+
+    }
+    100%
+    {
+        text-shadow: none;
+    }
+}
+
+
+
+
+/* GAMES SECTION */
+
+#games{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* border: 2px solid yellow; */
+    position: relative;
+    background: url('/img/SideDark.png') top right no-repeat;
+    background-size: contain;
+
+}
+
+/* LEFT SIDE HEADING SWIPE */
+.heading{
+    position: absolute;
+    top: 4.1rem;
+    /* border: 2px solid purple; */
+    background-color: rgb(153, 255, 0);
+    width: 30%;
+    height: 4.5rem;
+    color: rgb(0, 0, 0);
+    font-size: 3.5rem;
+    padding: 0.5rem 8rem;
+    text-align: end;
+    transform: translateX(-70rem);
+    transition: 0.5s;
+    z-index: 2;
+    border-bottom-right-radius: 4.5rem;
+    border-top-right-radius: 4.5rem;
+    
+}
+.inheading{
+    position: absolute;
+    top: 4.1rem;
+    /* border: 2px solid purple; */
+    /* background-color: rgb(153, 255, 0); */
+    width: 30%;
+    height: 4.5rem;
+    /* color: rgb(255, 255, 255); */
+    text-shadow: 1px 0px 5px white;
+    font-size: 3.5rem;
+    padding: 0.5rem 8rem;
+    text-align: end;
+    /* transform: translateX(-70rem); */
+    transition: 0.5s;
+
+}
+#games:hover .heading{
+    color: rgb(0, 0, 0);
+    font-size: 3.5rem;
+    transform: translateX(0);
+}
+/* LEFT SIDE ROW ALIGN */
+.row{
+    position: absolute;
+
+    top: 14rem;
+    margin: 0 5rem;
+    display: flex;
+    width: 70%;
+    height: 75%;
+    /* border: 2px solid red; */
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    /* border: 2px solid rgb(255, 255, 0); */
+    position: relative;
+}
+.image-box{
+    height: 40%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid green;   */
+    transition: 0.5s;
+}
+
+.heading-B{
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    
+}
+
+#games .col img{
+    width: 100%;
+    height: 75%;
+    /* border: 2px solid cyan; */
+    /* border: 2px solid rgb(78, 117, 0); */
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+.col .image-box:hover img{
+    transform: scale(1.25);
+    box-shadow: 0 0 45px rgb(153, 255, 0);
+    border: 2px solid rgb(153, 255, 0);
+}
+
+
+
+/* Common BUTTON: inside sections is targetted because a is used as link*/
+section .image-box .a-btn{
+    margin-top: 8rem;  /*because its under .image-box*/
+    width: 68%;
+    height: 25%;
+    background-color: transparent;
+    /* border: 2px solid rgb(170, 255, 0); */
+    color: white;
+    position: relative;
+    /* letter-spacing: 0.5rem; */
+    /* transform: rotate(-20deg) ; */
+}
+.btn{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 1.9rem;
+    font-family: 'Orbitron', sans-serif;
+    font-family: 'Russo One', sans-serif;
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgb(153, 255, 0);
+    transition: 0.5s;
+}
+section .a-btn:hover .btn{
+    transform: scaleX(1.2); /*to make wider with spacing*/
+    letter-spacing: 0.5rem;
+    box-shadow: 0 0 35px greenyellow;
+    color: greenyellow;
+    text-shadow: 0 0 30px greenyellow;
+    /* background-color: rgb(72, 255, 0); */
+    /* color: black; */
+}
+
+/* For break points in lights <i> is used as a element*/
+section .a-btn i{
+    position: absolute;
+    inset: 0; /*inset makes the element inset(inside parent;s border) by given px, or size*/
+    display: block;
+    /* background-color: red; */
+}
+/* for top break line */
+section .a-btn i::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 80%;
+    width: 1.5rem;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+.a-btn:hover i::before{
+    width: 3rem;
+    left: 20%;
+}
+/* For bottom break line */
+section .a-btn i::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 1.5rem;
+    height: 2px;
+    background-color: rgb(0, 0, 0);
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+.a-btn:hover i::after{
+    width: 3rem;
+    left: 80%;
+}
+
+
+/* POPULAR-SECTION */
+
+#popular{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid rgb(255, 0, 183); */
+    position: relative;
+    /* background-size: contain; */
+}
+#popular::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.3;
+    background: url('/img/CallOFDuty.png') top center/cover no-repeat;
+}
+
+/* RIGHT SIDE HEADING SWIPE */
+.alt-heading{
+    position: absolute;
+    top: 4.1rem;
+    right: 0;
+    /* border: 2px solid purple; */
+    background-color: rgb(153, 255, 0);
+    width: 30%;
+    height: 4.5rem;
+    color: rgb(0, 0, 0);
+    font-size: 3.5rem;
+    padding: 0.5rem 8rem;
+    text-align: start;
+    transform: translateX(70rem);
+    transition: 0.5s;
+    z-index: 2;
+    border-bottom-left-radius: 4.5rem;
+    border-top-left-radius: 4.5rem;
+    
+}
+.alt-inheading{
+    position: absolute;
+    top: 4.1rem;
+    right: 0;
+    /* border: 2px solid purple; */
+    /* background-color: rgb(153, 255, 0); */
+    width: 30%;
+    height: 4.5rem;
+    /* color: rgb(255, 255, 255); */
+    text-shadow: 1px 0px 5px white;
+    font-size: 3.5rem;
+    padding: 0.5rem 8rem;
+    text-align: start;
+    /* transform: translateX(-70rem); */
+    transition: 0.5s;
+
+}
+#popular:hover .alt-heading{
+    color: rgb(0, 0, 0);
+    font-size: 3.5rem;
+    transform: translateX(0);
+}
+
+/* RIGHT SIDE ROW ALIGN */
+.alt-col2{
+    position: absolute;
+    top: 14rem;
+    /* right: 0; */
+    margin: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 75%;
+    /* border: 2px solid red; */
+}
+
+/* for content */
+.row2{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 100%;
+    height: 70%;
+    /* border: 2px solid rgb(255, 255, 0); */
+    position: relative;
+}
+/* For button */
+.row3{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100%;
+    height: 30%;
+    /* border: 2px solid rgb(255, 255, 0); */
+    position: relative;
+}
+
+.image-box2{
+    height: 85%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid rgb(6, 0, 128); */
+    transition: 0.5s;
+}
+
+.row2 .image-box2 img{
+    width: 100%;
+    height: 75%;
+    /* border: 2px solid cyan; */
+    /* border: 2px solid rgb(78, 117, 0); */
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+.row2 .image-box2:hover img{
+    transform: scale(1.08);
+    box-shadow: 0 0 45px rgb(153, 255, 0);
+    border: 3px solid rgb(153, 255, 0);
+}
+
+
+/* TO target button in image-box2 */
+section .image-box2 a{
+    margin-top: 5rem;  /*because its under .image-box*/
+    width: 68%;
+    height: 40%;
+    background-color: transparent;
+    /* border: 2px solid rgb(170, 255, 0); */
+    color: white;
+    position: relative;
+    /* letter-spacing: 0.5rem; */
+    /* transform: rotate(-20deg) ; */
+}
+
+
+
+
+
+/* SHOP SECTION */
+#shop{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* border: 2px solid yellow; */
+    position: relative;
+    background: url('/img/SideDark.png') top right no-repeat;
+    background-size: contain;
+}
+
+#shop:hover .heading{
+    color: rgb(0, 0, 0);
+    font-size: 3.5rem;
+    transform: translateX(0);
+}
+
+.row4{
+    position: absolute;
+
+    top: 14rem;
+    margin: 0 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 70%;
+    height: 75%;
+    /* border: 2px solid red; */
+}
+
+/* Image-box 3 contains img, h4,buy button, p */
+.image-box3{
+    margin: 2rem;
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid green;   */
+    transition: 0.5s;   
+}
+
+.image-box3 img{
+    width: 100%;
+    height: 30%;
+}
+
+.image-box3 h4{
+    margin: 2rem;
+    color: white;
+    font-size: 2rem;
+}
+.image-box3 p{
+    width: 100%;
+    margin: 2rem;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    padding: 0 1rem;
+}
+
+section .image-box3 a{
+    margin-top: 2rem;  /*because its under .image-box*/
+    width: 40%;
+    height: 8%;
+    background-color: transparent;
+    /* border: 2px solid rgb(170, 255, 0); */
+    color: white;
+    position: relative;
+    /* letter-spacing: 0.5rem; */
+    /* transform: rotate(-20deg) ; */
+}
+section .image-box3 a .btn{
+    font-size: 1.5rem;
+    
+}
+
+
+
+/* ABOUT-SECTION */
+#about{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid rgb(76, 0, 255); */
+    position: relative;
+    background: url('/img/SideDark.png') top right no-repeat;
+    background-size: contain;
+
+}
+
+.row5{
+    /* position: absolute; */
+    margin: 0 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 75%;
+    /* border: 2px solid red; */
+    position: relative;
+}
+
+
+/* LEFT ABOUT content */
+.col4{
+    position: relative;
+    /* border: 2px solid cyan; */
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.aboutcontent{
+    position: absolute;
+    top: 20%;
+    height: 80%;
+    width: 65%;
+    /* border: 2px solid yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+
+.aboutcontent p{
+    /* height: 20%; */
+    /* margin: 0 2rem; */
+    /* padding: 0 1rem; */
+    /* border: 2px solid purple; */
+    color: white;
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+.aboutcontent .aboutlinks{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 0.8rem;
+    padding: 2rem 1rem;
+    /* border: 2px solid rgb(154, 255, 152); */
+    color: white;
+    font-size: 1.3rem;
+    line-height: 2rem;
+}
+
+.aboutlinks li{
+    /* margin-left: 2rem; */
+    list-style: url('/img/ARROWpointList_GREEN.png') ;
+    /* color: white; */
+}
+.aboutlinks li:hover a{
+    color: greenyellow;
+
+}
+
+.aboutlinks li a{
+    text-decoration: none;
+    color: white;
+    line-height: 3rem;
+}
+
+
+
+/* APPS Content RIGHT side */
+.col5{
+    position: relative;
+    /* border: 2px solid cyan; */
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.appscontent{
+    position: absolute;
+    top: 20%;
+    width: 70%;
+    height: 80%;
+    /* border: 2px solid yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    
+}
+.icon-box{
+    height: 4rem;
+    width: 40%;
+    margin: 2rem 0;
+    padding: 1rem;
+    display: flex;
+    border: 1px solid rgb(76, 76, 76);
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    
+}
+.icon-box:hover{
+    border: 1px solid rgb(255, 255, 255);
+   
+    
+}
+.icon-box p{
+    margin: 1.5rem 2rem;
+    color: white;
+    font-size: 1.3rem;
+    line-height: 2rem;
+
+}
+.icon-box img{
+    width: 3.5rem;
+    filter: invert(100%);
+
+}
+
+
+/* Heading APPS & platforms rights side swipe */
+#about .alt-heading{
+    width: 50%;
+    top: 0rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+#about .alt-inheading{
+    width: 50%;
+    top: 0rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+#about:hover .alt-heading{
+    top: 0rem;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    transform: translateX(0);
+}
+
+/* Heading ABOUT left side swip */
+#about .heading{
+    width: 50%;
+    top: 0rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+#about .inheading{
+    width: 50%;
+    top: 0rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+#about:hover .heading{
+    top: 0rem;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    transform: translateX(0);
+}
+
+
+
+/* CONTACT-SECTION */
+#contact{
+    height: 10vh;
+    background-color: rgb(153, 255, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#contact a{
+    height: 55%;
+}
+#contact img{
+    margin: 0 2rem;
+    height: 100%;
+}
+
+
+
+/* FOOTER */
+footer{
+    height: 5.5vh;
+    color: rgb(170, 255, 0);
+    text-align: center;
+    padding: 0.8rem;
+}
+footer p{
+    padding: 0.2rem;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* CHAT-guide */
+.chatguide{
+    position: fixed;
+    top: 90vh;
+    right: 2rem;
+    height: 5rem;
+    width: 5rem;
+    /* border: 2px solid red; */
+    color: white;
+    font-size: 1.5rem;
+    z-index: 20;
+}
+.chatguide img{
+    /* position: contain; */
+    height: 100%;
+    opacity: 0.5;
+    transition: 0.2s ease-in-out;
+    /* filter: drop-shadow(0px 0px 35px rgb(208, 255, 0)); */
+}
+
+.chatguide img:hover{
+    filter: drop-shadow(0px 0px 40px rgb(208, 255, 0));
+    opacity: 1;
+
+}
+
+
+/* RIGHT MENU FIXED */
+
+.right-menu{
+    height: 12%;
+    width: 5.5rem;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    z-index: 20;
+    /* border: 2px solid red; */
+    /* transform: translateX(20px); */
+    transition: 0.5s;
+}
+#games:hover .right-menu{
+    transform: translateX(0px); 
+}
+.right-menu ul{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.right-menu li{
+    height: 1.3rem;
+    /* background-color: pink; */
+    list-style: none;
+    position: relative;
+}
+.right-menu li:hover a{
+    text-shadow: 0 0 10px rgb(170, 255, 0);
+    color: greenyellow;
+
+}
+.right-menu a{
+    height: 100%;
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+
+
+/* MEDIA QUERY FOR MOBILE */
+@media screen and (max-width: 480px) {
+    :root{
+        font-size: 50%;
+        box-sizing: border-box;
+    }
+
+
+    /* Home-section(mobile) */
+    #home-section{
+        height: 100vh;
+    }
+    #home-section::before{
+        background: url('/img/homebggreen.jpg') center center/cover;
+    }
+    @keyframes bgchange{
+        0%
+        {
+            background: url('/img/homebggreen.jpg') center center/cover;
+        }
+        33%
+        {
+            background: url('/img/homebg2.jpg') center center/cover;
+        }
+        66%
+        {
+            background: url('/img/CallOFDuty-dar.jpg') top center/cover;
+        }
+        100%
+        {
+            background: url('/img/homebggreen.jpg') center center/cover;    
+        }
+    }
+
+    .content{
+        align-items: center;
+        padding: 3rem 1.1rem;
+        font-size: 2.5rem;
+    }
+
+    /* Games-Section(mobile) */
+    #games{
+        height: 225vh;/*c*/
+        justify-content: space-between;/*c*/
+        background-repeat: repeat-y;
+    }
+ 
+    /* LEFT SIDE ROW ALIGN */
+    .row{
+        align-self: center;/*c*/
+        position: relative;/*c*/
+        flex-direction: column;/*c*/
+        width: 90%;/*c*/
+        height: 90%;/*c*/
+    }
+    .col{
+        width: 100%;/*c*/
+        height: 50%;/*c*/
+    
+    }
+    .image-box{
+        margin: 1rem;
+        height: 45%;/*c*/
+        width: 90%;/*c*/
+    }
+
+    /* Because button was overlapping from 389px to 480px, so below media query nested */
+    @media screen and (min-width: 389px){
+        #games{
+            height: 235vh;
+        }
+        .image-box .a-btn{
+            margin: 4rem 0;
+        }
+        .image-box .a-btn{
+            margin: 4rem 0;
+        }
+        /* .image-box .a-btn i::before{
+            margin-top: 4rem 0;
+        } */
+    }
+    
+
+    .heading-B{
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        margin: 1.1rem 0 2.5rem;
+        
+    }
+    
+    #games .col img{
+        width: 100%;
+        height: auto;
+    }
+    .col .image-box:hover img{
+        transform: scale(1.05);
+    }
+
+
+    /* LEFT SIDE HEADING SWIPE */
+    .heading{
+        font-size: 2.8rem;/*c*/
+        display: flex;
+        align-items: center;
+        
+    }
+    .inheading{
+        display: flex;
+        align-items: center;
+    
+    }
+    #games:hover .heading{
+        font-size: 2.8rem;/*c*/
+    }
+
+
+    /* Popular-Section(mobile) */
+
+    #popular{
+        height: 150vh;/*c*/
+
+        /* background-size: contain; */
+
+    }
+    #popular::before{
+        opacity: 0.2;
+        background: url('/img/POP_bg.jpg') top center/cover;/*c*/
+        /* background: none; */
+        filter: blur(5px);
+    }
+    /* RIGHT SIDE ROW ALIGN */
+    .alt-col2{
+        position: relative;
+        top: 10rem;
+        height: 95%;
+        width: 80%;
+    }
+    
+    /* for content */
+    .row2{
+        flex-direction: column;
+        align-items: center;/*c*/
+        justify-content: space-between;/*c*/
+        height: 80%;/*c*/
+    }
+    /* For button */
+    .row3{
+        height: 20%;/*c*/
+
+    }
+    
+    .image-box2{
+        height: 60%;
+        width: 85%;/*c*/
+        margin: 0.5rem 0;/*c*/
+        /* border: 2px solid red; */
+        justify-content: flex-start;
+    }
+    .row2 .image-box2 img{
+        height: auto;
+        
+    }
+    
+    
+    
+    /* TO target button in image-box2 */
+    section .image-box2 .a-btn{
+        margin-top: 0rem;  /*because its under .image-box*/
+        width: 68%;
+        height: 40%;
+        background-color: transparent;
+        /* border: 2px solid rgb(170, 255, 0); */
+        color: white;
+        position: relative;
+        /* letter-spacing: 0.5rem; */
+        /* transform: rotate(-20deg) ; */
+    }
+
+    /* RIGHT SIDE HEADING SWIPE */
+    .alt-heading{
+        font-size: 2.8rem;/*c*/
+        display: flex;
+        align-items: center;   
+    }
+    .alt-inheading{
+        display: flex;
+        align-items: center;
+    }
+    #popular:hover .alt-heading{
+        font-size: 2.8rem;/*c*/
+    }
+
+
+
+    /* Shop-Section(Mobile */
+
+    #shop{
+        height: 320vh;/*c*/
+    }
+    .row4{
+        /* position: absolute; */
+        align-self: center;/*c*/
+        flex-direction: column;/*c*/
+        width: 75%;/*c*/
+        height: 95%;/*c*/
+        /* border: 2px solid red; */
+    }
+    
+    /* Image-box 3 contains img, h4,buy button, p */
+    .image-box3{
+        width: 100%;
+    }
+    .image-box3 img{
+        height: auto;
+    }
+    
+    .image-box3 h4{
+        font-size: 2.5rem;/*c*/
+    }
+    .image-box3 p{
+        font-size: 1.8rem;/*c*/
+        line-height: 2.5rem;/*c*/
+        box-sizing: border-box;/*c*/
+        text-align: center;/*c*/
+    }
+    
+    .image-box3 .a-btn{
+        margin: 2rem 0;  /*because its under .image-box*/
+        height: 5rem;/*c*/
+    }
+    .image-box3 .a-btn .btn{
+        font-size: 2rem;/*c*/   
+    }
+
+    /* HEading For Shop */
+    #shop:hover .heading{
+        color: rgb(0, 0, 0);
+        font-size: 2.8rem;
+        transform: translateX(0);
+    }
+    #shop .inheading{
+        font-size: 2.8rem;
+        display: flex;
+        align-items: center;
+
+    }
+
+
+    /* About-section(mobile) */
+    #about{
+        height: 150vh;/*c*/
+    }
+    
+    .row5{
+        flex-direction: column;/*c*/
+        align-items: center;
+        justify-content: center;
+        width: 100%;/*c*/
+        height: 100%;/*c*/
+    }
+    
+    
+    /* LEFT ABOUT content */
+    .col4{
+        align-self: left;/*c*/
+        width: 100%;/*c*/
+        height: 45%;/*c*/
+    }
+    .aboutcontent{
+        align-self: center;/*c*/
+        /* height: 80%; */
+        width: 90%;/*c*/
+    
+    }
+    
+    .aboutcontent p{
+        padding: 0 1rem;/*c*/
+        align-self: center;
+        font-size: 1.8rem;/*c*/
+        line-height: 2.5rem;/*c*/
+        box-sizing: border-box;/*c*/
+    }
+    .aboutcontent .aboutlinks{
+        height: 30%;/*c*/
+        width: 100%;/*c*/
+        box-sizing: border-box;/*c*/
+        align-self: center;/*c*/
+        padding: 2rem 3.1rem;/*c*/
+    }
+    
+    .aboutlinks li a{
+        font-size: 1.8rem;/*c*/
+    }
+    
+    
+    
+    /* APPS Content RIGHT side */
+    .col5{
+        align-self: right;/*c*/
+        width: 100%;/*c*/
+        height: 45%;/*c*/
+        margin: 2rem 0;/*c*/
+    }
+    
+    .appscontent{
+        width: 100%;/*c*/
+        align-items: center;/*c*/
+        
+    }
+
+    /* Below is to make icon box and about links according to screen size perfect fit */
+    @media screen and (max-width:389px) {
+        .icon-box{
+            height: 5rem;
+            width: 50%;
+        }
+        .aboutcontent .aboutlinks{
+            height: 100%;
+        }
+        
+    }
+    
+    
+    /* Heading APPS & platforms rights side swipe */
+    #about .alt-heading{
+        font-size: 2.4rem;/*c*/
+        display: flex;
+        align-items: center;
+        height: 5.6rem;
+    }
+    #about .alt-inheading{
+        display: flex;
+        align-items: center;
+        font-size: 2.4rem;
+    }
+    
+    #about:hover .alt-heading{
+        font-size: 2.4rem;/*c*/
+    }
+    
+    /* Heading ABOUT left side swip */
+    #about .heading{
+        font-size: 2.8rem;/*c*/
+        display: flex;
+        align-items: center;
+    }
+    #about .inheading{
+        display: flex;
+        align-items: center;
+        font-size: 2.8rem;
+    }
+    
+    #about:hover .heading{
+        font-size: 2.8rem;/*c*/
+    }
+
+    
+
+    /* Contact-Section(mobile) */
+    #contact{
+        height: 8vh;
+    }
+    #contact a{
+        height: 45%;
+    }
+
+
+    /* Footer-section(mobile) */
+
+    footer{
+        height: 12vh;
+        color: rgb(170, 255, 0);
+        text-align: center;
+        padding: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    footer p{
+        padding: 0.2rem;
+        font-size: 1.5rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+
+    /* Right-menu(mobile) which was there is PC */
+    .right-menu{
+        display: none;
+    }
+
+
+    /* MENU _BUTTON (MOBILE) */
+    .menu-btn{
+        display: block;
+    }
+
+
+    /* Hiding search bar */
+    .search-bar{
+        display: none;
+    }
+
+    /* For navbar hiding/ view*/
+    .navbar{
+        width: 35%;/*c*/
+        height: 100vh;/*c*/
+        /* background-color: black; */
+        position: absolute;
+        right: 0;
+        top: 0;
+        /* border-left: 1px solid white; */
+    }
+    .navlinks{
+        position: absolute;
+        right: 0;
+        width: 100%;/*c*/
+        height: 100%;/*c*/
+        border-left: 1px solid rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+        background-color: black;
+        opacity: 0.9;
+        transform: translateX(500px);
+        transition: 0.5s ease-in-out;
+    }
+    .mobile-menu{
+        transform: translateX(0px); /*this trasnform navlinks to 0px position ehich is created by javascript*/
+
+    }
+    .navlinks ul{
+        width: 100%;/*c*/
+        height: 40%;/*c*/
+        flex-direction: column;/*c*/
+    }
+    .navlinks li{
+        height: 15%;/*c*/
+        width: 80%;/*c*/
+        border: 1px solid rgb(255, 255, 255);/*c*/
+        border: none;/*c*/
+        border-radius: 1.1rem;/*c*/
+    }
+    .navlinks li a{
+        font-size: 1.8rem;/*c*/
+    }
+    
+    /* Display no effect of white waterlike animation from left to right */
+    .navlinks li::before{
+        display: none;/*c*/
+    }
+    .navlinks li:hover a{
+        text-shadow: 0 0 20px yellowgreen;
+    }
+
+
+
+    
+
+    
+
+    
+}
+
+
+
+
+/* 320px — 480px: Mobile devices. 481px — 768px: iPads, Tablets. 769px — 1024px: Small screens, laptops. 1025px — 1200px: Desktops, large screens. */
+
+/* IMPORTANT NOTES
+1. For Button, design it for different sizes
+2. inset: 0; inset: 2px, used for making it inside of parent by that given inset
+3. to put child inside container. Use "contain", in position, or size, or height width, try different
+4. Also try fit-content for 3. point
+ */
+
+
+
+/* 
+font-family: 'Anton', sans-serif;
+font-family: 'Caveat', cursive;
+font-family: 'Fira Sans', sans-serif;
+font-family: 'Nerko One', cursive;
+font-family: 'Pacifico', cursive;
+font-family: 'Patrick Hand', cursive;
+
+font-family: 'Rubik 80s Fade', cursive;
+font-family: 'Russo One', sans-serif;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+*/
